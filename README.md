@@ -1,3 +1,7 @@
+# Arduino 
+
+Arduino Code is located on /src/assets/ngx-serial.example.ino
+
 # NgxSerialExample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
