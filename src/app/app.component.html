@@ -1,4 +1,19 @@
+<div>
 <button (click)="connect()">Connect</button>
 <button (click)="toggleL1()">Toggle L1</button>
 <button (click)="toggleL2()">Toggle L2</button>
 <button (click)="close()">Close</button>
+</div>
+
+<div>
+    <div *ngIf="this.port">
+        <span class = "greendot"></span>
+        <span>Connected</span>
+    </div>
+    <div *ngIf="!this.port">
+        <span class = "reddot"></span>
+        <span>Disconnected</span>
+    </div>
+
+
+</div>

@@ -1,6 +1,7 @@
 # Arduino 
 
 Arduino Code is located on /src/assets/ngx-serial.example.ino
+This [Video](https://www.youtube.com/watch?v=Hsl_imkJa7o) show the application and the library in action 
 
 # NgxSerialExample
 

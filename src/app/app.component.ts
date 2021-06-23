@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'ngx-serial-example';
 
   serial: NgxSerial;
+  port:any;
 
   constructor() {
     this.serial = new NgxSerial(this.dataHandler);
@@ -20,19 +21,27 @@ export class AppComponent {
   }
 
   connect() {
-    this.serial.connect();
+    if(!this.port){
+    this.serial.connect((port:any)=>{
+      this.port = port;
+    });
+  }
   }
 
   toggleL1() {
-    this.serial.sendData(String.fromCharCode(76, 49, 10)); //L1/n
+    if(this.port)
+      this.serial.sendData("L1\n"); //L1\n
   }
   toggleL2() {
-    this.serial.sendData(String.fromCharCode(76, 50, 10));//L2/n
+    if(this.port)
+      this.serial.sendData("L2\n");//L2\n
   }
 
   close() {
-    this.serial.close();
+    if(this.port)
+      this.serial.close((port:any)=>{
+        this.port = port;
+
+    });
   }
-
-
 }
